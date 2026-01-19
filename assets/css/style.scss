@@ -4,8 +4,17 @@
 @import "{{ site.theme }}";
 
 /* Custom styles for sidebar navigation */
+body > div:first-of-type {
+  display: flex !important;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
 .page-header + div {
-  display: flex;
+  display: flex !important;
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem 1rem;
@@ -15,14 +24,18 @@
 
 .sidebar {
   width: 280px;
+  min-width: 280px;
   flex-shrink: 0;
   position: sticky;
   top: 2rem;
   height: fit-content;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  order: -1;
 }
 
 .sidebar h3 {
@@ -83,7 +96,16 @@
 .main-content {
   flex: 1;
   min-width: 0;
-  max-width: 64rem;
+  max-width: 100%;
+  width: 100%;
+}
+
+/* Ensure proper content wrapping */
+section.main-content {
+  flex: 1;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
 }
 
 /* Improve overall page styling */
@@ -158,14 +180,17 @@
 
 /* Mobile responsiveness */
 @media screen and (max-width: 768px) {
+  body > div:first-of-type,
   .page-header + div {
-    flex-direction: column;
+    flex-direction: column !important;
   }
   
   .sidebar {
-    width: 100%;
-    position: static;
+    width: 100% !important;
+    min-width: 100% !important;
+    position: static !important;
     margin-bottom: 2rem;
+    order: 0;
   }
   
   .project-name {
@@ -181,4 +206,9 @@
   .page-header {
     padding: 2rem 1rem 1.5rem;
   }
+}
+
+/* Smooth scrolling for navigation links */
+html {
+  scroll-behavior: smooth;
 }
