@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description | default: site.github.project_tagline }}"/>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <style>
+      .page-container {
+        display: flex;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        gap: 2rem;
+      }
+      
+      .sidebar {
+        width: 250px;
+        flex-shrink: 0;
+        position: sticky;
+        top: 2rem;
+        height: fit-content;
+        background: #f6f8fa;
+        border-radius: 6px;
+        padding: 1.5rem;
+      }
+      
+      .sidebar h3 {
+        margin-top: 0;
+        font-size: 1.1rem;
+        color: #24292f;
+        border-bottom: 2px solid #d0d7de;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      
+      .sidebar nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .sidebar nav ul li {
+        margin-bottom: 0.5rem;
+      }
+      
+      .sidebar nav ul li a {
+        color: #0969da;
+        text-decoration: none;
+        display: block;
+        padding: 0.5rem;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+        font-size: 0.95rem;
+      }
+      
+      .sidebar nav ul li a:hover {
+        background-color: #ddf4ff;
+      }
+      
+      .sidebar nav ul ul {
+        margin-left: 1rem;
+        margin-top: 0.5rem;
+      }
+      
+      .sidebar nav ul ul li a {
+        font-size: 0.9rem;
+        color: #57606a;
+      }
+      
+      .main-content {
+        flex: 1;
+        min-width: 0;
+      }
+      
+      @media screen and (max-width: 768px) {
+        .page-container {
+          flex-direction: column;
+        }
+        
+        .sidebar {
+          width: 100%;
+          position: static;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+      {% if site.github.is_project_page %}
+        <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
+      {% endif %}
+    </section>
+
+    <div class="page-container">
+      <aside class="sidebar">
+        <h3>Contents</h3>
+        <nav>
+          <ul>
+            <li><a href="#prerequisites">Prerequisites</a>
+              <ul>
+                <li><a href="#checking-and-upgrading-nodejs">Checking and Upgrading Node.js</a></li>
+              </ul>
+            </li>
+            <li><a href="#exercise-1-bootstrap-a-live-personal-site">Exercise 1: Bootstrap a Live Personal Site</a>
+              <ul>
+                <li><a href="#step-1-create-your-repository-from-boilerplate">Step 1: Create Your Repository</a></li>
+                <li><a href="#step-2-install-aem-code-sync">Step 2: Install AEM Code Sync</a></li>
+                <li><a href="#step-3-author-and-manage-content">Step 3: Author and Manage Content</a></li>
+                <li><a href="#step-4-preview-and-publish-content">Step 4: Preview and Publish</a></li>
+                <li><a href="#optional-install-aem-sidekick">Optional: Install AEM Sidekick</a></li>
+              </ul>
+            </li>
+            <li><a href="#exercise-2-know-the-development-flow-for-eds">Exercise 2: Development Flow for EDS</a>
+              <ul>
+                <li><a href="#step-1-install-aem-cli">Step 1: Install AEM CLI</a></li>
+                <li><a href="#step-2-clone-your-repository-via-ssh-or-https">Step 2: Clone Your Repository</a></li>
+                <li><a href="#step-3-start-local-development-server">Step 3: Start Local Server</a></li>
+                <li><a href="#step-4-make-a-minor-change-and-see-live-reload">Step 4: Make Changes</a></li>
+              </ul>
+            </li>
+            <li><a href="#exercise-3-setup-ai-tooling-configure-mcp-build-a-block-using-ai">Exercise 3: Setup AI Tooling</a>
+              <ul>
+                <li><a href="#step-1-configure-mcp-servers">Step 1: Configure MCP Servers</a></li>
+                <li><a href="#step-2-install-github-cli-and-add-agent-skills">Step 2: Install GitHub CLI</a></li>
+                <li><a href="#step-3-build-a-block-using-ai">Step 3: Build a Block Using AI</a></li>
+              </ul>
+            </li>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        {{ content }}
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      {% if site.github.is_project_page %}
+        <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
+      {% endif %}
+      <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+    </footer>
+  </body>
+</html>
