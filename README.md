@@ -1,6 +1,6 @@
-# Lab: Getting Started with Adobe Experience Manager - Edge Delivery Services
+# Dev Day Lab - Zero to 100: Prompt, Build & Go Live with your High-Performance Personal Website with AI
 
-This lab walks you through creating and developing a website using Adobe Experience Manager - Edge Delivery Services
+A hands-on lab where you'll be building your very own personal website from the ground up with ease. You'll be using Adobe Experience Manager with AI tools like Cursor, and by the end, you'll be walking away with your own live site — a keepsake you can share and continue evolving
 
 ## Prerequisites
 
@@ -8,67 +8,104 @@ Before starting this lab, ensure you have:
 
 - A personal GitHub account
 - A laptop (Mac, Windows Or Linux) with an installed IDE — preferably an AI-enabled editor (Cursor is strongly recommended; VS Code is also acceptable)
-- Node.js and npm installed on your local system
+- Node.js (version 20 or higher) and npm installed on your local system
 
+### Checking and Upgrading Node.js
+
+Check your current Node.js version:
+
+```bash
+node --version
+```
+
+If your version is lower than 20.x.x, you'll need to upgrade:
+
+- **Mac/Linux**: Use [nvm (Node Version Manager)](https://github.com/nvm-sh/nvm#installing-and-updating) or download from [nodejs.org](https://nodejs.org/)
+- **Windows**: Use [nvm-windows](https://github.com/coreybutler/nvm-windows#installation--upgrades) or download from [nodejs.org](https://nodejs.org/)
+
+```bash
+nvm install 20 # To install Node v20
+node -v # Must now show Node v20.x.y installed
+```
 ---
 
-## Exercise 1: Bootstrap a Live Personal Site with Default Blocks
+## Exercise 1: Bootstrap a Live Personal Site
 
-**Objective**: Set up your GitHub repository, configure DA.live, add your personal content, and publish your site.
+**Objective**: Set up your GitHub repository, configure DA (Document Authoring), add your personal content, and publish your site.
 
-**Outcome**: You will have a live personal website with default blocks running on AEM Edge Delivery Services.
+**Outcome**: You will have a live personal website running on AEM Edge Delivery Services.
 
 ### Step 1: Create Your Repository from Boilerplate
 
 1. Visit the [Dev Day Boilerplate repository](https://github.com/meejain/zeroto100)
 2. Click **"Use this template"** → **"Create a new repository"**
    <img width="1267" height="100" alt="Screenshot 2026-01-13 at 7 28 19 PM" src="https://github.com/user-attachments/assets/04dd7645-7f8b-4294-97eb-0405915cc747" />
-   
-3. Set **"Include all branches"** to **On**
-   <img width="739" height="270" alt="Screenshot 2026-01-13 at 7 11 34 PM" src="https://github.com/user-attachments/assets/aa731085-9026-411e-bc2f-8a38f6e32bc0" />
-   
-4. Choose your GitHub user/org as the owner
-5. Provide the repository name
-6. Set the repository to **public** (recommended)
-7. Click **"Create repository"**
+
+3. Choose your GitHub personal user as the owner
+4. Provide the repository name
+5. Set the repository to **public** (recommended)
+6. Click **"Create repository"**
 
 ### Step 2: Install AEM Code Sync
 
 1. Visit [AEM Code Sync GitHub App](https://github.com/apps/aem-code-sync/installations/new)
-2. Under **Repository access**, select **"Only select repositories"**
-3. Choose your newly created repository
-4. Click **"Save"**
+2. Select the "owner" same as where you create the repo in the previous steps
+<img width="300" height="799" alt="image" src="https://github.com/user-attachments/assets/cd43982d-0dcb-4758-a88d-eced776a0276" />
+
+3. IMPORTANT: Under **Repository access**, select **"Only select repositories"**
+4. Choose your newly created repository
+5. Click **"Save"**
 
 Your site is now live at:
 - **Preview**: `https://main--<repo>--<owner>.aem.page/`
 - **Production**: `https://main--<repo>--<owner>.aem.live/`
-
 > **Note**: Replace `<repo>` with your repository name and `<owner>` with your GitHub user/org.
+> 
+> You may see a 404 page right now, which is OK since we are going to create the page in next steps.
 
 ### Step 3: Author and Manage Content
 
 1. Navigate to [DA.live](https://da.live/start)
+<img width="300" height="638" alt="image" src="https://github.com/user-attachments/assets/67d6b5f5-d036-41bc-a251-6a30518f143a" />
+
 2. Add your newly created github repository link
-3. Select the **AEM Boilerplate** option. This will create boilerplate content.
-4. Visit https://da.live/apps/import and import the following pages using the **"By URL"** option:
+3. Select the **No Sample Content** option.
+<img width="300" height="535" alt="image" src="https://github.com/user-attachments/assets/cdb2264d-1150-4516-ae0b-b0a72c366c40" />
+
+4.We should now have an empty content space create for the site.
+
+<img width="300" height="630" alt="image" src="https://github.com/user-attachments/assets/5167c77f-67ac-43e4-949e-04b347e43fe3" />
+
+5. Let's import some sample content now. Visit https://da.live/apps/import and import the following pages using the **"By URL"** option:
    - `https://main--zeroto100--meejain.aem.live/lab1`
    - `https://main--zeroto100--meejain.aem.live/nav`
    - `https://main--zeroto100--meejain.aem.live/footer`
-5. In the **Org** field, enter your organization name and in **Site** field, enter your repository name.
+6. In the **Org** field, enter your organization name and in **Site** field, enter your repository name.
    - For example: If your DA.live URL is `https://da.live/#/meejain/zeroto100`, then:
      - **Org**: `meejain`
      - **Site**: `zeroto100`
+       
+    <img width="400" height="796" alt="image" src="https://github.com/user-attachments/assets/5cb9d167-5e45-43b1-9e8c-aa4feaf16635" />
+7. Wait for the content to import successfully. It should take 15-30 secs.
+8. You should now see the content imported for your site at https://da.live/#/<org>/<repo>
+
+<img width="400" height="450" alt="image" src="https://github.com/user-attachments/assets/df996783-2dad-44d6-a522-1ef35562710d" />
+
+
 
 ### Step 4: Preview and Publish Content
 
-1. In DA, Click the **Preview** button to preview your changes.
+
+1. Open up the page`lab1` 
+2. In DA, Click the **Preview** button to preview your changes.
   <img width="311" height="88" alt="Screenshot 2026-01-13 at 7 16 41 PM" src="https://github.com/user-attachments/assets/da191597-8e31-4238-b760-43da25ef2445" />
 
-2. Once satisfied with the preview, click the **Publish** button to make your content live.
+3. Once satisfied with the preview, click the **Publish** button to make your content live.
   <img width="311" height="88" alt="Screenshot 2026-01-13 at 7 16 41 PM" src="https://github.com/user-attachments/assets/da191597-8e31-4238-b760-43da25ef2445" />
   
-3. Your content will now be available on both preview and live URLs.
-
+4. Your content will now be available on both preview and live URLs.
+5. Feel free to add your own personalized content to the page. Do the same **Preview/Publish** steps to visualize your changes.
+   > Pro Tip: You can also visualize your changes inline by clicking on the preview button. <img width="57" height="67" alt="image" src="https://github.com/user-attachments/assets/7d6543b7-4dc7-452c-95b1-241978c4ba1c" />
 
 **Congratulations!** 🎉 You have successfully bootstrapped your live personal website with default blocks on AEM Edge Delivery Services. Your site is now live and accessible on the web!
 
@@ -161,7 +198,10 @@ Before adding the MCP server configuration, you need to get the access tokens fi
 - Go to the **Application** tab and **Storage**
 - Under **Cookies**, find `auth_token`
 - Copy the value of the `auth_token` cookie
-- Save this token - you'll need it in the next step as `{helix-token}`
+- Place this token in notepad or similar for now - you'll need it in the next step as `{helix-token}`
+- 
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/a1dff6e0-ecc2-4e00-bcf3-786ee35948cc" />
+
 
 **b) Get DA Live Admin API Token using Bookmarklet:**
 
@@ -183,7 +223,7 @@ javascript:(async function(){if(!window.adobeIMS||typeof adobeIMS.getAccessToken
 - Click on the **Get DA Token** bookmarklet in your bookmarks bar
 - A prompt will appear with your access token
 - Copy the token
-- Save this token - you'll need it in the next step as `{da-token}`
+- Place this token in notepad or similar for now - you'll need it in the next step as `{da-token}`
 
 #### 1.2 Add MCP Server Configuration
 
@@ -192,9 +232,7 @@ Now that you have both tokens, add the MCP servers to your IDE. **Replace `{heli
 **For Cursor IDE:**
 
 1. Open Cursor IDE
-2. Go to **Cursor Settings** → **Tools & MCP**
-   <img width="1028" height="378" alt="Screenshot 2026-01-13 at 7 46 55 PM" src="https://github.com/user-attachments/assets/f2cba43a-98f3-49e7-bc24-ee22861dc110" />
-
+2. Go to **Cusrsor > Setting > Cursor Settings** → **Tools & MCP**
 3. Add the following configuration (replace the token placeholders with your actual tokens):
 
 > **Note**: If you already have other MCP servers configured, just add `helix-mcp-server` and `da-live-admin` to your existing `mcpServers` object. Don't replace your entire configuration!
@@ -225,6 +263,8 @@ Now that you have both tokens, add the MCP servers to your IDE. **Replace `{heli
   }
 }
 ```
+4. After successful configuration, you should see the Helix and DA MCP servers available and enabled.
+      <img width="1028" height="378" alt="Screenshot 2026-01-13 at 7 46 55 PM" src="https://github.com/user-attachments/assets/f2cba43a-98f3-49e7-bc24-ee22861dc110" />
 
 **For Visual Studio Code:**
 
@@ -269,11 +309,176 @@ Now that you have both tokens, add the MCP servers to your IDE. **Replace `{heli
 
 5. Once enabled successfully, the list of tools should appear.
 
-### Step 2: Build a Block Using AI
+### Step 2: Install GitHub CLI and Add Agent Skills
 
-**TODO**
+#### 2.1 Install GitHub CLI (If not present)
 
-**Congratulations!** 🎉 You can now use AI to accelerate your EDS development:
-- MCP servers provide AI with context about your project
-- AI assists with code generation following EDS patterns
-- You can iterate faster with AI-powered development
+**For macOS:**
+
+See the [official installation guide](https://github.com/cli/cli/blob/trunk/docs/install_macos.md#homebrew)
+
+**For Windows:**
+
+See the [official installation guide](https://github.com/cli/cli/blob/trunk/docs/install_windows.md)
+
+**For Linux:**
+
+See the [official installation guide](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#recommended-official)
+
+> **Note**: After installation, you may need to authenticate with GitHub by running `gh auth login` before using `gh` commands.
+
+#### 2.2 Install gh-upskill Extension
+
+Install the gh-upskill extension for GitHub CLI:
+
+```bash
+gh extension install trieloff/gh-upskill
+```
+
+#### 2.3 Add AEM Skills to Your Project
+
+Navigate to your project root directory:
+
+```bash
+cd <repo>
+```
+
+> Replace `<repo>` with your repository name (the repo you cloned in Exercise 2).
+
+Then run:
+
+```bash
+gh upskill adobe/helix-website --dest-path .claude/skills --all
+```
+
+This command will add AEM-specific skills to your project, enabling AI agents to better understand and work with AEM Edge Delivery Services patterns and best practices.
+
+### Step 3: Build a Block Using AI
+
+Now that you have MCP servers configured, you can use AI to help you build blocks and manage content. Here are some sample workflows and prompts to get you started:
+
+#### Sample Workflow: Replace a Block with Another Block Type
+
+This workflow demonstrates a complete development cycle - from content editing to code generation to publishing.
+
+**Scenario**: Replace a `cards-skills` block with an `accordion` block while preserving the content.
+
+> **Note**: In the prompts below, replace `[org]`, `[site]`, and `[page-path]` with your own DA organization name, site/repository name, and page path. For example, if your DA URL is `https://da.live/edit#/meejain/zeroto100/lab1`, then `[org]` is `meejain`, `[site]` is `zeroto100`, and `[page-path]` is `lab1`.
+
+**Step-by-step prompts:**
+
+1. **Content Edit and Preview** (using Cursor/VS Code):
+   ```
+   Get the page from DA at https://da.live/edit#/[org]/[site]/[page-path], 
+   replace the cards-skills block with an Accordion block containing the same content, 
+   and preview the page.
+   ```
+   
+   This prompt will:
+   - Fetch the page content from DA
+   - Replace the block structure
+   - Update the content on DA
+   - Provide the page with new content
+
+2. **Code Generation** (if the block doesn't exist yet):
+   ```
+   Write the code for the Accordion block as well.
+   ```
+   
+   This prompt will:
+   - Generate the block's JavaScript (`accordion.js`)
+   - Generate the block's CSS (`accordion.css`)
+   - Follow the project's coding standards
+   
+   **Follow-up: Adapt Styling from Existing Design**
+   
+   After the basic accordion block is generated, you can adapt styling from an existing design:
+   ```
+   Can you check accordion designed on the page - https://lab2--zeroto100--meejain.aem.live/lab2 
+   and convert the styling as is
+   ```
+   
+   This will:
+   - Inspect the accordion design
+   - Extract the visual styling
+   - Apply the same design to your accordion block
+
+3. **Push Code to Repository** (manual or AI-assisted):
+   ```
+   Push the updated code to the repository
+   ```
+   
+   Or manually:
+   ```bash
+   git add blocks/accordion/
+   git commit -m "Add accordion block"
+   git push origin main
+   ```
+
+4. **Publish the Resource** (using DA or Sidekick):
+   - Use the Publish button in DA.live
+   - Or use the AEM Sidekick extension
+   - Or use this prompt:
+   ```
+   Publish the resource https://da.live/edit#/[org]/[site]/[page-path]
+   ```
+
+#### More Sample Prompts
+
+**Creating a New Block:**
+```
+Create a hero-banner block with a heading, subtext, background image, 
+and call-to-action button. Match the existing design system.
+```
+
+**Modifying an Existing Block:**
+```
+Update the cards block to add hover animations and ensure it's 
+responsive across mobile, tablet, and desktop breakpoints.
+```
+
+**Debugging a Block:**
+```
+The carousel block isn't working properly. Debug the issue and fix it.
+```
+
+**Content Management:**
+```
+Get the page from DA at https://da.live/edit#/[org]/[repo]/[path] 
+and update the hero section text.
+```
+
+**Performance Optimization:**
+```
+Review all blocks and optimize them for Core Web Vitals. 
+Ensure images are lazy-loaded and CSS is minimal.
+```
+
+**Congratulations!** 🎉 You have successfully completed Lab 2 and you have a live personal website on which you have built your own block using AI!
+
+**Check Your Website's Performance:**
+
+After publishing your content, verify your Lighthouse score:
+
+1. Visit [PageSpeed Insights](https://pagespeed.web.dev/)
+2. Enter your live website URL: `https://main--{repo}--{owner}.aem.live/{path}`
+3. Click "Analyze" to see your Core Web Vitals and Lighthouse scores
+4. Aim for a score of 100 on Performance, Accessibility, Best Practices
+
+**What You've Accomplished:**
+- Built and deployed a custom block on AEM - Edge Delivery Services
+- Published a live personal website
+- Learned EDS development patterns and best practices
+- Can now use AI to accelerate your EDS development
+
+---
+
+## Troubleshooting
+
+### MCP Installation Issues with npx
+
+If you're facing issues with MCP server installation or the servers are not connecting properly, try clearing the npx cache:
+
+```bash
+rm -rf ~/.npm/_npx
+```
