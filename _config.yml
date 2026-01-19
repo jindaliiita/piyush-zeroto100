@@ -1,0 +1,42 @@
+title: "Zero to 100: Build Your Personal Website with AI"
+description: "A hands-on lab for building a high-performance personal website using AEM and AI tools"
+theme: jekyll-theme-cayman
+
+# GitHub Pages configuration
+baseurl: ""
+url: "https://jindaliiita.github.io"
+
+# Optional settings
+show_downloads: false
+github:
+  is_project_page: true
+  repository_url: "https://github.com/jindaliiita/piyush-zeroto100"
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: GitHub
+    url: https://github.com/jindaliiita/piyush-zeroto100
+
+# Footer
+author: "Piyush Jindal"
+
+# Exclude files from processing
+exclude:
+  - node_modules/
+  - vendor/
+  - .github/
+  - .agents/
+  - .skills/
+  - blocks/
+  - scripts/
+  - tools/
+  - fstab.yaml
+  - head.html
+  - package.json
+  - package-lock.json
+
+# Include specific files
+include:
+  - README.md
