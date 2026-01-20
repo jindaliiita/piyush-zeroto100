@@ -1,6 +1,6 @@
 title: "Zero to 100: Build Your Personal Website with AI"
 description: "A hands-on lab for building a high-performance personal website using AEM and AI tools"
-theme: jekyll-theme-cayman
+# theme: jekyll-theme-cayman  # Removed to use custom layout
 
 # GitHub Pages configuration
 baseurl: ""
