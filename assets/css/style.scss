@@ -30,8 +30,8 @@ body {
   font-size: 1.25rem !important;
 }
 
-/* Main flex container - target the div after page-header */
-.page-header ~ div {
+/* Main grid container */
+.docs-layout {
   display: grid !important;
   grid-template-columns: 280px 1fr !important;
   min-height: calc(100vh - 250px) !important;
@@ -42,7 +42,7 @@ body {
 }
 
 /* LEFT SIDEBAR NAVIGATION */
-.page-header ~ div > aside.sidebar {
+.docs-layout > aside.sidebar {
   grid-column: 1 !important;
   width: 280px !important;
   position: sticky !important;
@@ -125,8 +125,8 @@ body {
 }
 
 /* RIGHT CONTENT AREA */
-.page-header ~ div > section.main-content,
-.page-header ~ div > main.main-content {
+.docs-layout > section.main-content,
+.docs-layout > main.main-content {
   grid-column: 2 !important;
   max-width: 100% !important;
   width: 100% !important;
@@ -321,12 +321,12 @@ html {
 
 /* Mobile responsive */
 @media screen and (max-width: 996px) {
-  .page-header ~ div {
+  .docs-layout {
     grid-template-columns: 1fr !important;
     grid-template-rows: auto 1fr !important;
   }
   
-  .page-header ~ div > aside.sidebar {
+  .docs-layout > aside.sidebar {
     grid-column: 1 !important;
     grid-row: 1 !important;
     width: 100% !important;
@@ -337,8 +337,8 @@ html {
     border-bottom: 1px solid #e3e3e3 !important;
   }
   
-  .page-header ~ div > section.main-content,
-  .page-header ~ div > main.main-content {
+  .docs-layout > section.main-content,
+  .docs-layout > main.main-content {
     grid-column: 1 !important;
     grid-row: 2 !important;
     padding: 2rem 1.5rem !important;
@@ -374,8 +374,8 @@ html {
     font-size: 1.75rem !important;
   }
   
-  .page-header ~ div > section.main-content,
-  .page-header ~ div > main.main-content {
+  .docs-layout > section.main-content,
+  .docs-layout > main.main-content {
     padding: 1.5rem 1rem !important;
     margin: 0.5rem !important;
   }
