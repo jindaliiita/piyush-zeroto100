@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero to 100: Build Your Personal Website with AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.0/github-markdown-light.min.css">
+    <style>
+        body { margin: 0; padding: 0; font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif; }
+        .header { background: linear-gradient(135deg,#667eea 0%,#764ba2 100%); color: #fff; padding: 4rem 2rem; text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .btn { padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: 600; display: inline-block; margin: 0.5rem; }
+        .btn-primary { background: #fff; color: #667eea; }
+        .btn-secondary { background: rgba(255,255,255,0.2); color: #fff; border: 2px solid #fff; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .markdown-body { box-sizing: border-box; min-width: 200px; max-width: 980px; margin: 0 auto; padding: 45px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🚀 Zero to 100: Build Your Personal Website with AI</h1>
+        <p>A hands-on lab for building a high-performance personal website using AEM and AI tools</p>
+        <div>
+            <a href="https://main--piyush-zeroto100--jindaliiita.aem.live/" class="btn btn-primary">View Live Site →</a>
+            <a href="https://github.com/jindaliiita/piyush-zeroto100" class="btn btn-secondary">GitHub Repository →</a>
+        </div>
+    </div>
+    <div class="container">
+        <article class="markdown-body" id="content"></article>
+    </div>
+    <script>
+        fetch('README.md')
+            .then(r => r.text())
+            .then(text => {
+                const converter = new showdown.Converter();
+                document.getElementById('content').innerHTML = converter.makeHtml(text);
+            });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+</body>
+</html>
