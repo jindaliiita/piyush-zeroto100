@@ -29,15 +29,18 @@ body {
   font-size: 1.25rem !important;
 }
 
-/* Main grid container */
-.docs-layout {
+/* Main grid container - ultra-specific selectors */
+body > div.docs-layout,
+div.docs-layout {
   display: grid !important;
   grid-template-columns: 280px 1fr !important;
+  grid-auto-flow: column !important;
   min-height: calc(100vh - 250px) !important;
   margin: 0 !important;
   padding: 0 !important;
   background: #f5f6f7 !important;
   gap: 0 !important;
+  width: 100% !important;
 }
 
 /* LEFT SIDEBAR NAVIGATION */
