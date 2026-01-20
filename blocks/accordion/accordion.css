@@ -37,7 +37,7 @@
 }
 
 .accordion details:hover {
-  box-shadow: 0 4px 16px rgba(0, 96, 52, 0.1);
+  box-shadow: 0 4px 16px rgb(0 96 52 / 10%);
 }
 
 /* Summary (clickable header) */
